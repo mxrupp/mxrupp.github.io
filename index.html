@@ -6,7 +6,8 @@
     <title>iMessage-ähnliche Nachrichten</title>
     <style>
         body {
-            background-color: #f0f0f0;
+            background-color: #000;
+            color: #fff;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -19,30 +20,29 @@
         }
 
         .message {
-            background-color: #e1e1e1;
             padding: 10px;
             margin-bottom: 10px;
             border-radius: 10px;
             display: inline-block;
             clear: both;
+            opacity: 0; /* Beginnt mit einer Opazität von 0 */
+            animation: fade-in 1s forwards; /* Fadet die Nachricht ein */
         }
 
         .sent {
             float: right;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #007AFF; /* Blaue Farbe für gesendete Nachrichten */
         }
 
         .received {
             float: left;
-            background-color: #ddd;
-            color: black;
+            background-color: #333; /* Dunkelgrau für empfangene Nachrichten */
         }
 
         .typing-animation {
             overflow: hidden;
             white-space: nowrap;
-            border-right: 2px solid #333;
+            border-right: 2px solid #fff;
             animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
             font-size: 16px;
             display: inline-block;
@@ -55,7 +55,11 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent; }
-            50% { border-color: #333; }
+            50% { border-color: #fff; }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -63,14 +67,4 @@
 
 <div id="message-container">
     <div class="message received">Hallo, wie geht es dir?</div>
-    <div class="message sent">Hallo! Mir geht es gut, danke!</div>
-    <div class="message received">Freut mich zu hören. Was machst du gerade?</div>
-    <div class="message sent">Ich arbeite an einem HTML-Beispiel für eine iMessage-ähnliche Seite!</div>
-    <div class="message received">Das klingt cool! Kannst du es mir zeigen?</div>
-    <div class="message sent">
-        <div class="typing-animation"></div>
-    </div>
-</div>
-
-</body>
-</html>
+    <div class="message sent">Hallo! Mir geht es gut, danke!</div
