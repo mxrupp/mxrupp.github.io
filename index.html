@@ -3,49 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iMessage-ähnliche Nachrichten</title>
+    <title>Handy-Hack</title>
     <style>
         body {
             background-color: #000;
-            color: #fff;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #00FF00; /* Grüne Schriftfarbe */
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-        }
-
-        #message-container {
-            max-width: 600px;
-            margin: 20px auto;
             overflow: hidden;
         }
 
-        .message {
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            clear: both;
-            opacity: 0; /* Beginnt mit einer Opazität von 0 */
-            animation: fade-in 1s forwards; /* Fadet die Nachricht ein */
-        }
-
-        .sent {
-            float: right;
-            background-color: #007AFF; /* Blaue Farbe für gesendete Nachrichten */
-        }
-
-        .received {
-            float: left;
-            background-color: #333; /* Dunkelgrau für empfangene Nachrichten */
-        }
-
-        .typing-animation {
-            overflow: hidden;
+        #hacked-text {
             white-space: nowrap;
-            border-right: 2px solid #fff;
-            animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
-            font-size: 16px;
-            display: inline-block;
+            overflow: hidden;
+            border-right: 2px solid #00FF00;
+            font-size: 24px;
+            animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
         }
 
         @keyframes typing {
@@ -55,16 +34,15 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent; }
-            50% { border-color: #fff; }
-        }
-
-        @keyframes fade-in {
-            to { opacity: 1; }
+            50% { border-color: #00FF00; }
         }
     </style>
 </head>
 <body>
 
-<div id="message-container">
-    <div class="message received">Hallo, wie geht es dir?</div>
-    <div class="message sent">Hallo! Mir geht es gut, danke!</div
+<div id="hacked-text">
+    Hello World! Your phone is being hacked...
+</div>
+
+</body>
+</html>
