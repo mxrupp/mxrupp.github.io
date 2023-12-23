@@ -57,41 +57,28 @@
             margin-top: 5px;
         }
 
-        #input-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 10px;
-            box-sizing: border-box;
+        .flower-container {
             position: fixed;
-            bottom: 0;
+            bottom: 60px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            background-color: transparent;
+            animation: flower-bloom 2s forwards;
         }
 
-        #input-message {
-            flex: 1;
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            margin-right: 10px;
-            background-color: transparent;
-            color: #fff;
+        .stem {
+            width: 2px;
+            height: 100px;
+            background-color: green;
+            margin: 0 auto;
+            border-radius: 5px;
         }
 
-        #send-button {
-            background-color: #007AFF;
-            color: #fff;
-            padding: 10px;
+        .flower {
+            width: 30px;
+            height: 30px;
+            background-color: red;
             border-radius: 50%;
-            width: 40px; /* Neuer Wert für die Breite */
-            height: 40px; /* Neuer Wert für die Höhe */
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
+            margin: 0 auto;
         }
 
         @keyframes typing {
@@ -106,6 +93,15 @@
 
         @keyframes fade-in {
             to { opacity: 1; }
+        }
+
+        @keyframes flower-bloom {
+            from {
+                transform: translateX(-50%) scale(0);
+            }
+            to {
+                transform: translateX(-50%) scale(1);
+            }
         }
     </style>
 </head>
@@ -130,6 +126,11 @@
             <div class="typing-animation"></div>
         </div>
     </div>
+</div>
+
+<div class="flower-container">
+    <div class="stem"></div>
+    <div class="flower"></div>
 </div>
 
 <div id="input-container">
