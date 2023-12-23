@@ -13,6 +13,12 @@
             padding: 0;
         }
 
+        #chat-header {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
         #message-container {
             max-width: 600px;
             margin: 20px auto;
@@ -65,15 +71,24 @@
 </head>
 <body>
 
+<div id="chat-header">
+    Max
+</div>
+
 <div id="message-container">
     <div class="message-group">
-        <div class="message received">Hallo Mia </div>
+        <div class="message received">Hallo, wie geht es dir?</div>
     </div>
     <div class="message-group">
-        <div class="message received" style="animation-delay: 1s;">Ich wollte dir nur mal sagen...</div>
+        <div class="message received" style="animation-delay: 1s;">Freut mich zu hören. Was machst du gerade?</div>
     </div>
     <div class="message-group">
-        <div class="message received" style="animation-delay: 2s;">... du müffelst n bissl</div>
+        <div class="message received" style="animation-delay: 2s;">Das klingt cool! Kannst du es mir zeigen?</div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 3s;">
+            <div class="typing-animation"></div>
+        </div>
     </div>
 </div>
 
