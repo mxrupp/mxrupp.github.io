@@ -61,7 +61,7 @@
             position: relative;
             margin-top: 40px;
             text-align: center;
-            opacity: 0; /* Blume am Anfang unsichtbar machen */
+            opacity: 0;
             transition: opacity 1s;
         }
 
@@ -80,7 +80,7 @@
             border-radius: 50%;
             margin: -100px auto 0;
             transform: scale(0);
-            animation: bloom 1s forwards; /* Neue Animation für die Blume */
+            animation: bloom 1s forwards;
         }
 
         #input-container {
@@ -149,58 +149,17 @@
 
 <div id="message-container">
     <div class="message-group">
-        <div class="message received">Hallo mein Schatz 🥰</div>
+        <div class="message received">Hallo, wie geht es dir?</div>
     </div>
     <div class="message-group">
-        <div class="message received" style="animation-delay: 1s;">Max hier 🙋🏼‍♂️</div>
+        <div class="message received" style="animation-delay: 1s;">Freut mich zu hören. Was machst du gerade?</div>
     </div>
     <div class="message-group">
-        <div class="message received" style="animation-delay: 2s;">Ich hoffe sehr, bei dir ist alles in Ordnung und du hast schöne Weihnachten :)</div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Ich für meinen Teil genieße die Zeit mit meiner Familie sehr...!</div>
-        </div>
+        <div class="message received" style="animation-delay: 2s;">Das klingt cool! Kannst du es mir zeigen?</div>
     </div>
     <div class="message-group">
         <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Das einzige, was jetzt jedoch fehlt, bist du 🥲</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Wirklich schade, dass wir uns nicht sehen können. Wirklich gerne würde <br>
-                ich dir jetzt gerade mein Geschenk überreichen! 🤩</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Da das aber offentlich nichts wird, dachte ich mir, ich zeig dir mal, was sonst so in mir (und den natürlich Informatikerfingern) steckt 👀</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Also habe ich mich kurzer Hand dazu entschieden eine Website aufzusetzen und eine "billige" Version von iMessage selbst zu programmieren... </div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Und das Ergebnis siehst du gerade 🤩</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Vielleicht nicht ganz so toll, wie das original... aber dafür mit ein paar kleinen "special features".</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Hier habe ich zum Beispiel einen kleinen Blumenstrauß für dich: </div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Ich hoffe, er gefällt dir 🥰🥰</div>
+            <div class="typing-animation"></div>
         </div>
     </div>
 </div>
@@ -219,15 +178,15 @@
     // JavaScript-Code, um die Blume nach dem Laden der Seite erscheinen zu lassen
     document.addEventListener('DOMContentLoaded', function () {
         var flowerContainer = document.querySelector('.flower-container');
-        var messageContainers = document.querySelectorAll('.message-group');
+        var messageGroups = document.querySelectorAll('.message-group');
 
         // Überprüfen, ob Nachrichten vorhanden sind
-        if (messageContainers.length > 0) {
+        if (messageGroups.length > 0) {
             // Letzte Nachricht abrufen
-            var lastMessageContainer = messageContainers[messageContainers.length - 1];
+            var lastMessageGroup = messageGroups[messageGroups.length - 1];
 
             // Auf das Ende der Animation der letzten Nachricht warten
-            lastMessageContainer.addEventListener('animationend', function () {
+            lastMessageGroup.addEventListener('animationend', function () {
                 // Blume erscheinen lassen
                 flowerContainer.style.opacity = 1;
             });
