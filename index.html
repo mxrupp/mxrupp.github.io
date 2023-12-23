@@ -125,6 +125,139 @@
 </div>
 
 <div id="input-container">
+    <input type="text" id="input-message" placeholder="iMessage">
+    <button id="send-button">&#9650;</button>
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iMessage-ähnliche Nachrichten</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #chat-header {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #message-container {
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .message-group {
+            margin-bottom: 20px;
+            clear: both;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            opacity: 0;
+            margin-top: 5px;
+            animation: fade-in 1s forwards;
+        }
+
+        .received {
+            float: left;
+            background-color: #007AFF; /* Blaue Farbe für empfangene Nachrichten */
+            margin-right: 10px;
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #fff;
+            animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        #input-container {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #input-message {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        #send-button {
+            background-color: #007AFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-header">
+    Max
+</div>
+
+<div id="message-container">
+    <div class="message-group">
+        <div class="message received">Hallo, wie geht es dir?</div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 1s;">Freut mich zu hören. Was machst du gerade?</div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 2s;">Das klingt cool! Kannst du es mir zeigen?</div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 3s;">
+            <div class="typing-animation"></div>
+        </div>
+    </div>
+</div>
+
+<div id="input-container">
     <input type="text" id="input-message" placeholder="Nachricht eingeben...">
     <button id="send-button">&#9650;</button>
 </div>
