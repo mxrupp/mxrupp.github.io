@@ -108,25 +108,72 @@
         }
 
         .stem {
-            width: 10px;
+            width: 5px;
             height: 100px;
             background-color: #00FF00; /* Grün für den Stiel */
-            margin-top: 20px;
             position: absolute;
+            top: -20px;
         }
 
         .flower {
-            width: 50px;
-            height: 50px;
-            background-color: #FFD700; /* Gelb für die Blüten */
-            border-radius: 50%;
-            position: relative;
+            position: absolute;
+            top: -70px;
         }
 
-        @keyframes bloom {
-            to {
-                bottom: 0;
-            }
+        .petal {
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000; /* Rot für die Blütenblätter */
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .center-petal {
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000; /* Rot für die Blütenblätter */
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+        }
+
+        .center-petal::before,
+        .center-petal::after {
+            content: '';
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000; /* Rot für die Blütenblätter */
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+        }
+
+        .center-petal::before {
+            left: -25px;
+        }
+
+        .center-petal::after {
+            left: 25px;
+        }
+
+        .left-petal {
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000; /* Rot für die Blütenblätter */
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: -30px;
+        }
+
+        .right-petal {
+            width: 20px;
+            height: 40px;
+            background-color: #FF0000; /* Rot für die Blütenblätter */
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 30px;
         }
 
         @keyframes typing {
@@ -175,9 +222,23 @@
 <!-- Minimalistischer Blumenstrauß -->
 <div id="flowers">
     <div class="stem"></div>
-    <div class="flower"></div>
-    <div class="flower"></div>
-    <div class="flower"></div>
+    <div class="flower">
+        <div class="center-petal"></div>
+        <div class="left-petal"></div>
+        <div class="right-petal"></div>
+    </div>
+    <div class="stem"></div>
+    <div class="flower">
+        <div class="center-petal"></div>
+        <div class="left-petal"></div>
+        <div class="right-petal"></div>
+    </div>
+    <div class="stem"></div>
+    <div class="flower">
+        <div class="center-petal"></div>
+        <div class="left-petal"></div>
+        <div class="right-petal"></div>
+    </div>
 </div>
 
 <script>
