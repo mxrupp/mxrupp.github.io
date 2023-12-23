@@ -20,6 +20,24 @@
             max-width: 600px;
             margin: 0 auto;
             border-radius: 10px; /* Abrundete Ecken */
+            position: relative;
+        }
+
+        #profile-image {
+            width: 40px; /* Größe des Profilbilds anpassen */
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            left: 10px; /* Position des Profilbilds anpassen */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         #message-container {
@@ -112,6 +130,9 @@
 <body>
 
 <div id="chat-header">
+    <div id="profile-image">
+        <img src="dein-bild.jpg" alt="Profilbild">
+    </div>
     Max
 </div>
 
