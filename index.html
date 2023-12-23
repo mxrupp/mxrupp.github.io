@@ -59,7 +59,7 @@
 
         .flower-container {
             position: fixed;
-            bottom: 60px;
+            bottom: 100px; /* Adjusted position */
             left: 50%;
             transform: translateX(-50%);
             animation: flower-bloom 2s forwards;
@@ -79,6 +79,44 @@
             background-color: red;
             border-radius: 50%;
             margin: 0 auto;
+            margin-top: -15px; /* Adjusted position */
+        }
+
+        #input-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        #input-message {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        #send-button {
+            background-color: #007AFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px; /* Neuer Wert für die Breite */
+            height: 40px; /* Neuer Wert für die Höhe */
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
         }
 
         @keyframes typing {
@@ -97,10 +135,10 @@
 
         @keyframes flower-bloom {
             from {
-                transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) translateY(-50%) scale(0);
             }
             to {
-                transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) translateY(-50%) scale(1);
             }
         }
     </style>
