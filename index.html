@@ -30,7 +30,8 @@
 
 <script>
         // JavaScript für den Tippmaschinen-Effekt
-        const textToType = "adjföalsdjf öalsdj öalkdfj öalskdj öalksjd föalksjd fölaksjd fölaksjd fölaksjdf ölaksdjf ölaskjd fölaksjd fölaksjd ölaksj dfölaksdj fölakjd fölaksjd ölak jdölaksj dölakj sdölakj sdöflakj sdölkaj sdöflkaj döflkajdöflaj dölfkajsdöflkajsdölkfjaweporiqjwpeo ifheroigh sidfb sidlfjbv oijbnv apwdjin öalksdnv lkjf vöaksdh föalksdjf öalkdshjf ";
+        const textToType = "adjföalsdjf öalsdj,
+            öalkdfj öalskdj öalksjd föalksjd fölaksjd fölaksjd fölaksjdf ölaksdjf ölaskjd fölaksjd fölaksjd ölaksj dfölaksdj fölakjd fölaksjd ölak jdölaksj dölakj sdölakj sdöflakj sdölkaj sdöflkaj döflkajdöflaj dölfkajsdöflkajsdölkfjaweporiqjwpeo ifheroigh sidfb sidlfjbv oijbnv apwdjin öalksdnv lkjf vöaksdh föalksdjf öalkdshjf ";
         let index = 0;
         const typedTextElement = document.getElementById("typed-text");
 
@@ -38,7 +39,7 @@
             if (index < textToType.length) {
                 typedTextElement.innerHTML += textToType.charAt(index);
                 index++;
-                setTimeout(typeText, 100); // Ändern Sie die Zeit, um die Geschwindigkeit zu steuern
+                setTimeout(typeText, 30); // Ändern Sie die Zeit, um die Geschwindigkeit zu steuern
             }
         }
 
