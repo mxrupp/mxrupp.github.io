@@ -20,24 +20,22 @@
         }
 
         .message-group {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            clear: both;
         }
 
         .message {
             padding: 10px;
             border-radius: 10px;
             opacity: 0;
+            margin-top: 5px;
             animation: fade-in 1s forwards;
-        }
-
-        .sent {
-            float: right;
-            background-color: #007AFF;
         }
 
         .received {
             float: left;
-            background-color: #333;
+            background-color: #007AFF; /* Blaue Farbe für empfangene Nachrichten */
+            margin-right: 10px;
         }
 
         .typing-animation {
@@ -47,6 +45,7 @@
             animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
             font-size: 16px;
             display: inline-block;
+            margin-top: 5px;
         }
 
         @keyframes typing {
@@ -69,18 +68,35 @@
 <div id="message-container">
     <div class="message-group">
         <div class="message received">Hallo, wie geht es dir?</div>
-        <div class="message sent">Hallo! Mir geht es gut, danke!</div>
+    </div>
+
+    <div class="message-group">
         <div class="message received">Freut mich zu hören. Was machst du gerade?</div>
     </div>
 
     <div class="message-group">
-        <div class="message sent">Ich arbeite an einem HTML-Beispiel für eine iMessage-ähnliche Seite!</div>
         <div class="message received">Das klingt cool! Kannst du es mir zeigen?</div>
-        <div class="message sent">
+    </div>
+
+    <div class="message-group">
+        <div class="message received">
             <div class="typing-animation"></div>
         </div>
     </div>
 </div>
+
+<script>
+    // JavaScript für die zeitlich gestaffelte Animation
+    document.addEventListener("DOMContentLoaded", function() {
+        const messages = document.querySelectorAll('.message');
+        let delay = 0;
+
+        messages.forEach(message => {
+            message.style.animationDelay = delay + 's';
+            delay += 0.5; // Ändern Sie den Zeitabstand nach Bedarf
+        });
+    });
+</script>
 
 </body>
 </html>
