@@ -89,11 +89,11 @@
     // JavaScript für die zeitlich gestaffelte Animation
     document.addEventListener("DOMContentLoaded", function() {
         const messages = document.querySelectorAll('.message');
-        let delay = 0;
+        let delay = 2; // Verlängert auf 2 Sekunden für realistischere Pausen
 
         messages.forEach(message => {
             message.style.animationDelay = delay + 's';
-            delay += 0.5; // Ändern Sie den Zeitabstand nach Bedarf
+            delay += 4; // Verlängert um 4 Sekunden für den nächsten Nachrichtenwechsel
         });
     });
 </script>
