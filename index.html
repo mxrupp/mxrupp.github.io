@@ -12,6 +12,8 @@
             border-right: 1px solid #000;
             font-size: 24px;
             animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+            /* Fügt das word-wrap-Attribut hinzu */
+            word-wrap: break-word;
         }
 
         @keyframes typing {
@@ -26,12 +28,11 @@
     </style>
 </head>
 <body>
-<p id="typed-text"></p>
+    <p id="typed-text"></p>
 
-<script>
+    <script>
         // JavaScript für den Tippmaschinen-Effekt
-        const textToType = "adjföalsdjf öalsdj,
-            öalkdfj öalskdj öalksjd föalksjd fölaksjd fölaksjd fölaksjdf ölaksdjf ölaskjd fölaksjd fölaksjd ölaksj dfölaksdj fölakjd fölaksjd ölak jdölaksj dölakj sdölakj sdöflakj sdölkaj sdöflkaj döflkajdöflaj dölfkajsdöflkajsdölkfjaweporiqjwpeo ifheroigh sidfb sidlfjbv oijbnv apwdjin öalksdnv lkjf vöaksdh föalksdjf öalkdshjf ";
+        const textToType = "hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo hallo ";
         let index = 0;
         const typedTextElement = document.getElementById("typed-text");
 
@@ -39,7 +40,7 @@
             if (index < textToType.length) {
                 typedTextElement.innerHTML += textToType.charAt(index);
                 index++;
-                setTimeout(typeText, 30); // Ändern Sie die Zeit, um die Geschwindigkeit zu steuern
+                setTimeout(typeText, 100); // Ändern Sie die Zeit, um die Geschwindigkeit zu steuern
             }
         }
 
