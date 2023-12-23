@@ -55,17 +55,25 @@
         }
 
         #input-container {
-            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             display: flex;
             align-items: center;
+            background-color: transparent;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         #input-message {
             flex: 1;
             padding: 10px;
             border-radius: 20px;
-            border: none;
+            border: 1px solid #ccc;
             margin-right: 10px;
+            background-color: transparent;
+            color: #fff;
         }
 
         #send-button {
@@ -75,6 +83,7 @@
             border-radius: 50%;
             border: none;
             cursor: pointer;
+            font-size: 18px;
         }
 
         @keyframes typing {
@@ -117,7 +126,7 @@
 
 <div id="input-container">
     <input type="text" id="input-message" placeholder="Nachricht eingeben...">
-    <button id="send-button">&#9658;</button>
+    <button id="send-button">&#9650;</button>
 </div>
 
 </body>
