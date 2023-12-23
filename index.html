@@ -61,6 +61,8 @@
             position: relative;
             margin-top: 40px;
             text-align: center;
+            opacity: 0; /* Blume am Anfang unsichtbar machen */
+            transition: opacity 1s;
         }
 
         .stem {
@@ -171,6 +173,26 @@
     <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
     <button id="send-button">&#9650;</button>
 </div>
+
+<script>
+    // JavaScript-Code, um die Blume nach dem Laden der Seite erscheinen zu lassen
+    document.addEventListener('DOMContentLoaded', function () {
+        var flowerContainer = document.querySelector('.flower-container');
+        var messageContainers = document.querySelectorAll('.message-group');
+
+        // Überprüfen, ob Nachrichten vorhanden sind
+        if (messageContainers.length > 0) {
+            // Letzte Nachricht abrufen
+            var lastMessageContainer = messageContainers[messageContainers.length - 1];
+
+            // Auf das Ende der Animation der letzten Nachricht warten
+            lastMessageContainer.addEventListener('animationend', function () {
+                // Blume erscheinen lassen
+                flowerContainer.style.opacity = 1;
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
