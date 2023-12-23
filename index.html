@@ -54,6 +54,29 @@
             margin-top: 5px;
         }
 
+        #input-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        #input-message {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        #send-button {
+            background-color: #007AFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
         @keyframes typing {
             from { width: 0; }
             to { width: 100%; }
@@ -90,6 +113,11 @@
             <div class="typing-animation"></div>
         </div>
     </div>
+</div>
+
+<div id="input-container">
+    <input type="text" id="input-message" placeholder="Nachricht eingeben...">
+    <button id="send-button">&#9658;</button>
 </div>
 
 </body>
