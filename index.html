@@ -63,6 +63,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: flower-bloom 2s forwards;
+            opacity: 0; /* Initially hidden */
         }
 
         .stem {
@@ -136,9 +137,11 @@
         @keyframes flower-bloom {
             from {
                 transform: translateX(-50%) translateY(-50%) scale(0);
+                opacity: 0;
             }
             to {
                 transform: translateX(-50%) translateY(-50%) scale(1);
+                opacity: 1;
             }
         }
     </style>
