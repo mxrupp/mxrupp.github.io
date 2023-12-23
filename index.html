@@ -31,14 +31,14 @@
         .message-group {
             margin-bottom: 20px;
             clear: both;
+            opacity: 0;
+            animation: fade-in 1s forwards;
         }
 
         .message {
             padding: 10px;
             border-radius: 10px;
-            opacity: 0;
             margin-top: 5px;
-            animation: fade-in 1s forwards;
         }
 
         .received {
@@ -80,7 +80,7 @@
             border-radius: 50%;
             margin: -100px auto 0;
             transform: scale(0);
-            animation: bloom 1s forwards; /* Neue Animation für die Blume */
+            animation: bloom 1s forwards;
         }
 
         #input-container {
@@ -222,6 +222,11 @@
 
         // Überprüfen, ob Nachrichten vorhanden sind
         if (messageGroups.length > 0) {
+            // Alle Nachrichten durchlaufen und Animation verzögern
+            messageGroups.forEach(function (messageGroup, index) {
+                messageGroup.style.animationDelay = (index + 1) + 's';
+            });
+
             // Letzte Nachricht abrufen
             var lastMessageGroup = messageGroups[messageGroups.length - 1];
 
