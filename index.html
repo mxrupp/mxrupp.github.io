@@ -168,4 +168,26 @@
 </div>
 
 <div id="input-container">
-    <input type="text" id="input-message" placeholder="
+    <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
+    <button id="send-button">&#9650;</button>
+</div>
+
+<!-- Minimalistischer Blumenstrauß -->
+<div id="flowers">
+    <div class="stem"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+</div>
+
+<script>
+    // JavaScript, um die Blumen nach dem Laden der Seite erscheinen zu lassen
+    window.onload = function () {
+        setTimeout(function () {
+            document.getElementById('flowers').style.bottom = '0';
+        }, 5000); // Verzögerung in Millisekunden (hier: 5 Sekunden)
+    };
+</script>
+
+</body>
+</html>
