@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +12,27 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Damit die Seite scrollt */
+            overflow-y: scroll;
         }
 
         #chat-header {
             background-color: rgba(85, 85, 85, 0.7);
             padding: 10px;
             text-align: center;
-            max-width: 100%; /* Volle Breite, aber begrenzt auf die maximale Breite des Inhalts */
-            margin: 0; /* Am linken Bildschirmrand beginnen */
+            max-width: 100%;
+            margin: 0;
             border-radius: 10px;
         }
 
         #message-container {
-            max-width: 85%; /* 85% der Bildschirmbreite */
-            margin: 20px 0 0; /* Platz über dem Nachrichten-Container */
+            max-width: 85%;
+            margin: 20px 0 0;
             overflow: hidden;
-            margin-left: 0; /* Am linken Bildschirmrand beginnen */
+            margin-left: 0;
         }
 
         .message-group {
-            margin-bottom: 10px; /* Kleiner Abstand zwischen den Nachrichten */
+            margin-bottom: 10px;
             clear: both;
             opacity: 0;
             animation: fade-in 1s forwards;
@@ -41,7 +42,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-top: 5px;
-            max-width: 100%; /* Volle Breite */
+            max-width: 100%;
             overflow-wrap: break-word;
         }
 
@@ -53,15 +54,15 @@
         }
 
         #input-container {
-            max-width: 100%; /* Volle Breite */
+            max-width: 100%;
             margin: 0;
             padding: 10px;
             box-sizing: border-box;
             position: fixed;
             bottom: 0;
-            left: 0; /* Am linken Bildschirmrand beginnen */
-            right: 0; /* Rechts ausrichten */
-            width: 100%; /* Volle Breite */
+            left: 0;
+            right: 0;
+            width: 100%;
             display: flex;
             align-items: center;
             background-color: #000;
@@ -90,118 +91,130 @@
         }
 
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #fff; }
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #fff;
+            }
         }
 
         @keyframes fade-in {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div id="chat-header">
-    Max ❤️
-</div>
-
-<div id="message-container">
-    <!-- 10 Nachrichten hinzugefügt -->
-    <div class="message-group message1">
-        <div class="message received" style="animation-delay: 1s;">
-            <div class="message received">Hallo mein Schatz 🥰</div>
-        </div>
-    </div>
-    <div class="message-group message2">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="message received">Och man... das ganze hier hat so viel schlechter geklappt als ich wollte 😩😔</div>
-        </div>
-    </div>
-    <div class="message-group message3">
-        <div class="message received" style="animation-delay: 5s;">
-            <div class="message received">Ich hatte so eine gute Idee für diese Website, aber es hat einfach nicht geklappt... 😭</div>
-        </div>
-    </div>
-    <div class="message-group message4">
-        <div class="message received" style="animation-delay: 9s;">
-            <div class="message received">Aber nach 10 Stunden Entwicklungszeit muss ich jetzt wohl leider aufgeben. Weil sonst ist Weihnachten rum, bevor du das hier siehst 😅 </div>
-        </div>
-    </div>
-    <div class="message-group message5">
-        <div class="message received" style="animation-delay: 15s;">
-            <div class="message received">Naja... </div>
-        </div>
-    </div>
-    <div class="message-group message6">
-        <div class="message received" style="animation-delay: 16s;">
-            <div class="message received">Was ich auf jeden Fall sagen wollte: </div>
-        </div>
-    </div>
-    <div class="message-group message7">
-        <div class="message received" style="animation-delay: 19s;">
-            <div class="message received">Ich habe dich unglaublich lieb 🥰</div>
-        </div>
-    </div>
-    <div class="message-group message8">
-        <div class="message received" style="animation-delay: 21s;">
-            <div class="message received">Und wünsche dir natürlich ganz ganz tolle Weihnachten 🎄❤️ </div>
-        </div>
-    </div>
-    <div class="message-group message9">
-        <div class="message received" style="animation-delay: 23s;">
-            <div class="message received">Liebe Grüße an deine Familie und ganz viel Spaß 🥰</div>
-        </div>
-    </div>
-    <div class="message-group message10">
-        <div class="message received" style="animation-delay: 25s;">
-            <div class="message received">Dein Max 🥰</div>
-        </div>
+    <div id="chat-header">
+        Max ❤️
     </div>
 
-    <!-- Weitere Nachrichten -->
-    <div class="message-group message11">
-        <div class="message received" style="animation-delay: 26s;">
-            <div class="message received"> PS:Ich würde dich gerne noch zitieren. Denn auch, wenn das alles nicht so wirklich geklappt hat, war es echt viel Arbeit... Ich hoffe also daher, du merkst, dass ich hiermit iMessage imitieren wollte und kann nur sagen "Wenn du jetzt was negatives sagst, dann weine ich" haha 😂🥰</div>
+    <div id="message-container">
+        <!-- 10 Nachrichten hinzugefügt -->
+        <div class="message-group message1">
+            <div class="message received">
+                <div class="message received">Hallo mein Schatz 🥰</div>
+            </div>
+        </div>
+        <div class="message-group message2">
+            <div class="message received">
+                <div class="message received">Och man... das ganze hier hat so viel schlechter geklappt als ich wollte 😩😔</div>
+            </div>
+        </div>
+        <div class="message-group message3">
+            <div class="message received">
+                <div class="message received">Ich hatte so eine gute Idee für diese Website, aber es hat einfach nicht geklappt... 😭</div>
+            </div>
+        </div>
+        <div class="message-group message4">
+            <div class="message received">
+                <div class="message received">Aber nach 10 Stunden Entwicklungszeit muss ich jetzt wohl leider aufgeben. Weil sonst ist Weihnachten rum, bevor du das hier siehst 😅 </div>
+            </div>
+        </div>
+        <div class="message-group message5">
+            <div class="message received">
+                <div class="message received">Naja... </div>
+            </div>
+        </div>
+        <div class="message-group message6">
+            <div class="message received">
+                <div class="message received">Was ich auf jeden Fall sagen wollte: </div>
+            </div>
+        </div>
+        <div class="message-group message7">
+            <div class="message received">
+                <div class="message received">Ich habe dich unglaublich lieb 🥰</div>
+            </div>
+        </div>
+        <div class="message-group message8">
+            <div class="message received">
+                <div class="message received">Und wünsche dir natürlich ganz ganz tolle Weihnachten 🎄❤️ </div>
+            </div>
+        </div>
+        <div class="message-group message9">
+            <div class="message received">
+                <div class="message received">Liebe Grüße an deine Familie und ganz viel Spaß 🥰</div>
+            </div>
         </div>
         <div class="message-group message10">
-        <div class="message received" style="animation-delay: 27s;">
-            <div class="message received">❤️</div>
+            <div class="message received">
+                <div class="message received">Dein Max 🥰</div>
+            </div>
+        </div>
+
+        <!-- Weitere Nachrichten -->
+        <div class="message-group message11">
+            <div class="message received">
+                <div class="message received"> PS: Ich würde dich gerne noch zitieren. Denn auch, wenn das alles nicht so wirklich geklappt hat, war es echt viel Arbeit... Ich hoffe also daher, du merkst, dass ich hiermit iMessage imitieren wollte und kann nur sagen "Wenn du jetzt was negatives sagst, dann weine ich" haha 😂🥰</div>
+            </div>
+        </div>
+        <div class="message-group message12">
+            <div class="message received">
+                <div class="message received">❤️</div>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="input-container">
-    <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
-    <button id="send-button">&#9650;</button>
-</div>
+    <div id="input-container">
+        <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
+        <button id="send-button">&#9650;</button>
+    </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var messageContainer = document.getElementById('message-container');
-        var messageGroups = document.querySelectorAll('.message-group');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var messageGroups = document.querySelectorAll('.message-group');
 
-        messageGroups.forEach(function (messageGroup, index) {
-            messageGroup.style.animationDelay = (index + 1) + 's';
+            messageGroups.forEach(function (messageGroup, index) {
+                setTimeout(function () {
+                    messageGroup.classList.add('fade-in');
+                }, (index + 1) * 5000); // Timeout entsprechend des gewünschten Zeitintervalls (5 Sekunden)
+            });
 
-            setTimeout(function () {
-                messageGroup.classList.add('fade-in');
-            }, (index + 1) * 1000); // Timeout entsprechend der Animation
+            var lastMessageGroup = messageGroups[messageGroups.length - 1];
+
+            lastMessageGroup.addEventListener('animationend', function () {
+                var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
+                window.scrollTo({ top: scrollAmount, behavior: 'smooth' });
+            });
         });
-
-        var lastMessageGroup = messageGroups[messageGroups.length - 1];
-
-        lastMessageGroup.addEventListener('animationend', function () {
-            // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-            var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
-            messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
-        });
-    });
-</script>
+    </script>
 
 </body>
+
 </html>
