@@ -47,6 +47,7 @@
             float: left;
             background-color: #007AFF;
             margin-right: 10px;
+            max-width: calc(50% - 10px);
         }
 
         .typing-animation {
@@ -96,7 +97,7 @@
             width: 100%;
             display: flex;
             align-items: center;
-            background-color: #000; /* Hintergrundfarbe hinzugefügt */
+            background-color: #000;
         }
 
         #input-message {
@@ -105,7 +106,7 @@
             border-radius: 20px;
             border: 1px solid #ccc;
             margin-right: 10px;
-            background-color: #000; /* Hintergrundfarbe hinzugefügt */
+            background-color: #000;
             color: #fff;
         }
 
@@ -222,24 +223,18 @@
 </div>
 
 <script>
-    // JavaScript-Code, um die Blume nach dem Laden der Seite erscheinen zu lassen
     document.addEventListener('DOMContentLoaded', function () {
         var flowerContainer = document.querySelector('.flower-container');
         var messageGroups = document.querySelectorAll('.message-group');
 
-        // Überprüfen, ob Nachrichten vorhanden sind
         if (messageGroups.length > 0) {
-            // Alle Nachrichten durchlaufen und Animation verzögern
             messageGroups.forEach(function (messageGroup, index) {
                 messageGroup.style.animationDelay = (index + 1) + 's';
             });
 
-            // Letzte Nachricht abrufen
             var lastMessageGroup = messageGroups[messageGroups.length - 1];
 
-            // Auf das Ende der Animation der letzten Nachricht warten
             lastMessageGroup.addEventListener('animationend', function () {
-                // Blume erscheinen lassen
                 flowerContainer.style.opacity = 1;
             });
         }
