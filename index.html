@@ -123,8 +123,7 @@
             <div class="message received">Max hier 🙋🏼‍♂️</div>
         </div>
     </div>
-
-      <div class="message-group message3">
+    <div class="message-group message3">
         <div class="message received" style="animation-delay: 3s;">
             <div class="message received">Ich hoffe, bei dir ist alles klar und du hast schöne Weihnachten :) </div>
         </div>
@@ -175,17 +174,16 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var messageContainer = document.getElementById('message-container');
+        var inputContainer = document.getElementById('input-container');
         var messageGroups = document.querySelectorAll('.message-group');
 
         messageGroups.forEach(function (messageGroup, index) {
             messageGroup.style.animationDelay = (index + 1) + 's';
+            messageGroup.classList.add('fade-in');
 
-            setTimeout(function () {
-                messageGroup.classList.add('fade-in');
-                // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-                var scrollAmount = messageGroup.offsetTop - window.innerHeight / 2 + messageGroup.offsetHeight / 2;
-                messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
-            }, (index + 1) * 1000); // Timeout entsprechend der Animation
+            // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
+            var scrollAmount = inputContainer.offsetTop - window.innerHeight / 2 + inputContainer.offsetHeight / 2;
+            messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
         });
     });
 </script>
