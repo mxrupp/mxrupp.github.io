@@ -24,9 +24,31 @@
         }
 
         #message-container {
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 100%; /* Volle Breite */
+            margin: 20px auto 0; /* Platz über dem Nachrichten-Container */
             overflow: hidden;
+        }
+
+        .message-group {
+            margin-bottom: 20px;
+            clear: both;
+            opacity: 0;
+            animation: fade-in 1s forwards;
+        }
+
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 5px;
+            max-width: calc(100% - 20px);
+            overflow-wrap: break-word;
+        }
+
+        .received {
+            float: left;
+            background-color: #007AFF;
+            margin-right: 10px;
+            color: #fff;
         }
 
         #input-container {
@@ -88,7 +110,22 @@
 </div>
 
 <div id="message-container">
-    <!-- Nachrichten-Container wurde entfernt -->
+    <div class="message-group">
+        <div class="message received">Hallo mein Schatz 🥰</div>
+    </div>
+    
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 1s;">Max hier 🙋🏼‍♂️</div>
+    </div>
+    
+    <!-- Neue Nachricht hinzugefügt -->
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 2s;">
+            <div class="message received">Hallo</div>
+        </div>
+    </div>
+    
+    <!-- Weitere Nachrichten können auf ähnliche Weise hinzugefügt werden -->
 </div>
 
 <div id="input-container">
