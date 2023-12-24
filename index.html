@@ -11,7 +11,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-y: auto; /* Damit die Seite scrollt */
+            overflow-y: scroll; /* Damit die Seite scrollt */
         }
 
         #chat-header {
@@ -26,9 +26,9 @@
         #message-container {
             max-width: 85%; /* 85% der Bildschirmbreite */
             margin: 20px 0 0; /* Platz über dem Nachrichten-Container */
-            overflow-y: auto; /* Erlaubt vertikales Scrollen */
+            overflow: hidden;
             margin-left: 0; /* Am linken Bildschirmrand beginnen */
-            height: calc(50vh - 60px); /* Bildschirmhöhe minus Höhe des Input-Containers */
+            height: 50vh; /* Bildschirmhöhe */
         }
 
         .message-group {
@@ -169,6 +169,24 @@
     <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
     <button id="send-button">&#9650;</button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var messageContainer = document.getElementById('message-container');
+        var messageGroups = document.querySelectorAll('.message-group');
+
+        messageGroups.forEach(function (messageGroup, index) {
+            messageGroup.style.animationDelay = (index + 1) + 's';
+
+            setTimeout(function () {
+                messageGroup.classList.add('fade-in');
+                // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
+                var scrollAmount = messageGroup.offsetTop - window.innerHeight / 2 + messageGroup.offsetHeight / 2;
+                messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
+            }, (index + 1) * 1000); // Timeout entsprechend der Animation
+        });
+    });
+</script>
 
 </body>
 </html>
