@@ -3,247 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iMessage-ähnliche Nachrichten</title>
+    <title>iMessage-ähnliche Seite</title>
     <style>
         body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Damit die Seite scrollt */
+            background-color: black;
+            font-family: 'Helvetica Neue', sans-serif;
         }
 
-        #chat-header {
-            background-color: rgba(85, 85, 85, 0.7);
+        #header {
+            background-color: #d8d8d8; /* Grauer Balken */
             padding: 10px;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-
-        #message-container {
-            max-width: 600px;
-            margin: 20px auto;
-            overflow: hidden;
-        }
-
-        .message-group {
-            margin-bottom: 20px;
-            clear: both;
-            opacity: 0;
-            animation: fade-in 1s forwards;
-        }
-
-        .message {
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 5px;
-            max-width: calc(100% - 20px);
-            overflow-wrap: break-word;
-        }
-
-        .received {
-            float: left;
-            background-color: #007AFF;
-            margin-right: 10px;
-        }
-
-        .typing-animation {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
-            font-size: 16px;
-            display: inline-block;
-            margin-top: 5px;
-        }
-
-        .flower-container {
-            position: relative;
-            margin-top: 40px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-
-        .stem {
-            width: 2px;
-            height: 100px;
-            background-color: green;
-            margin: 0 auto;
-            border-radius: 5px;
-        }
-
-        .flower {
-            width: 30px;
-            height: 30px;
-            background-color: red;
-            border-radius: 50%;
-            margin: -100px auto 0;
-            transform: scale(0);
-            animation: bloom 1s forwards;
-        }
-
-        #input-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 10px;
-            box-sizing: border-box;
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
             width: 100%;
-            display: flex;
-            align-items: center;
-            background-color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        #input-message {
-            flex: 1;
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            margin-right: 10px;
-            background-color: #000;
-            color: #fff;
-        }
-
-        #send-button {
-            background-color: #007AFF;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #fff; }
-        }
-
-        @keyframes fade-in {
-            to { opacity: 1; }
-        }
-
-        @keyframes bloom {
-            to {
-                transform: scale(1);
-            }
+        #content {
+            padding: 20px;
+            color: white;
         }
     </style>
 </head>
 <body>
 
-<div id="chat-header">
-    Max ❤️
+<div id="header">
+    <!-- Hier könnte der Header-Inhalt platziert werden -->
+    <!-- Beispiel: <h1>iMessage-ähnliche Seite</h1> -->
 </div>
 
-<div id="message-container">
-    <div class="message-group">
-        <div class="message received">Hallo mein Schatz 🥰</div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 1s;">Max hier 🙋🏼‍♂️</div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 2s;">Ich hoffe sehr, bei dir ist alles in Ordnung und du hast schöne Weihnachten :)</div>
-    </div>
-    
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 3s;">
-            <div class="typing-animation">Ich für meinen Teil genieße die Zeit <br> mit meiner Familie sehr...!</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 4s;">
-            <div class="typing-animation">Das einzige, was jetzt jedoch <br> fehlt, bist du 🥲</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 5s;">
-            <div class="typing-animation">Wirklich schade, dass wir uns nicht sehen können.</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 5s;">
-            <div class="typing-animation">So gerne würde ich dir jetzt mein Geschenk überreichen 🤩</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 6s;">
-            <div class="typing-animation">Da das aber offentlich nichts wird, dachte ich mir, <br> ich zeig dir mal, was sonst so in mir (und den natürlich Informatikerfingern) <br> steckt 👀</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 7s;">
-            <div class="typing-animation">Also habe ich mich kurzer Hand dazu entschieden <br> eine Website aufzusetzen und eine "billige" Version <br> von iMessage selbst zu programmieren... </div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 8s;">
-            <div class="typing-animation">Und das Ergebnis siehst du gerade 🤩</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 9s;">
-            <div class="typing-animation">Vielleicht nicht ganz so toll, wie das original... <br> aber dafür mit ein paar kleinen "special features".</div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 10s;">
-            <div class="typing-animation">Hier habe ich zum Beispiel einen kleinen Blumenstrauß für dich: </div>
-        </div>
-    </div>
-    <div class="message-group">
-        <div class="message received" style="animation-delay: 11s;">
-            <div class="typing-animation">Ich hoffe, er gefällt dir 🥰🥰</div>
-        </div>
-    </div>
+<div id="content">
+    <!-- Hier könnte der Chat-Inhalt platziert werden -->
+    <!-- Beispiel: <p>Chat-Inhalt hier...</p> -->
 </div>
-
-<div class="flower-container">
-    <div class="stem"></div>
-    <div class="flower"></div>
-</div>
-
-<div id="input-container">
-    <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
-    <button id="send-button">&#9650;</button>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var flowerContainer = document.querySelector('.flower-container');
-        var messageContainer = document.getElementById('message-container');
-        var messageGroups = document.querySelectorAll('.message-group');
-
-        if (messageGroups.length > 0) {
-            messageGroups.forEach(function (messageGroup, index) {
-                messageGroup.style.animationDelay = (index + 1) + 's';
-            });
-
-            var lastMessageGroup = messageGroups[messageGroups.length - 1];
-
-            lastMessageGroup.addEventListener('animationend', function () {
-                flowerContainer.style.opacity = 1;
-                // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-                var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
-                messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
-            });
-        }
-    });
-</script>
 
 </body>
 </html>
