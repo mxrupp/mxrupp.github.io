@@ -15,10 +15,11 @@
         #header {
             position: relative;
             background-color: rgba(200, 200, 200, 0.7); /* Grauer Balken mit 70% Deckkraft */
-            padding: 10px;
+            padding: 15px; /* etwas dickerer Balken */
             width: 100%;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
+            border-radius: 15px; /* abgerundete Ecken */
         }
 
         #header-text {
@@ -27,6 +28,19 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        #footer {
+            background-color: rgba(200, 200, 200, 0.7); /* Grauer Balken mit 70% Deckkraft */
+            padding: 10px;
+            width: 100vw; /* Vollständige Bildschirmbreite */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 15px; /* abgerundete Ecken */
+        }
+
+        #footer-text {
+            color: white;
         }
 
         #content {
@@ -44,6 +58,10 @@
 <div id="content">
     <!-- Hier könnte der Chat-Inhalt platziert werden -->
     <!-- Beispiel: <p>Chat-Inhalt hier...</p> -->
+</div>
+
+<div id="footer">
+    <div id="footer-text">iMessage</div>
 </div>
 
 </body>
