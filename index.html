@@ -112,7 +112,7 @@
 </div>
 
 <div id="message-container">
-    <!-- 20 Nachrichten hinzugefügt -->
+    <!-- 10 Nachrichten hinzugefügt -->
     <div class="message-group message1">
         <div class="message received" style="animation-delay: 1s;">
             <div class="message received">Nachricht 1</div>
@@ -123,15 +123,44 @@
             <div class="message received">Nachricht 2</div>
         </div>
     </div>
-    <!-- ... weitere Nachrichten ... -->
-    <div class="message-group message19">
-        <div class="message received" style="animation-delay: 19s;">
-            <div class="message received">Nachricht 19</div>
+    <div class="message-group message3">
+        <div class="message received" style="animation-delay: 3s;">
+            <div class="message received">Nachricht 3</div>
         </div>
     </div>
-    <div class="message-group message20">
-        <div class="message received" style="animation-delay: 20s;">
-            <div class="message received">Nachricht 20</div>
+    <div class="message-group message4">
+        <div class="message received" style="animation-delay: 4s;">
+            <div class="message received">Nachricht 4</div>
+        </div>
+    </div>
+    <div class="message-group message5">
+        <div class="message received" style="animation-delay: 5s;">
+            <div class="message received">Nachricht 5</div>
+        </div>
+    </div>
+    <div class="message-group message6">
+        <div class="message received" style="animation-delay: 6s;">
+            <div class="message received">Nachricht 6</div>
+        </div>
+    </div>
+    <div class="message-group message7">
+        <div class="message received" style="animation-delay: 7s;">
+            <div class="message received">Nachricht 7</div>
+        </div>
+    </div>
+    <div class="message-group message8">
+        <div class="message received" style="animation-delay: 8s;">
+            <div class="message received">Nachricht 8</div>
+        </div>
+    </div>
+    <div class="message-group message9">
+        <div class="message received" style="animation-delay: 9s;">
+            <div class="message received">Nachricht 9</div>
+        </div>
+    </div>
+    <div class="message-group message10">
+        <div class="message received" style="animation-delay: 10s;">
+            <div class="message received">Nachricht 10</div>
         </div>
     </div>
 </div>
@@ -151,7 +180,9 @@
 
             setTimeout(function () {
                 messageGroup.classList.add('fade-in');
-                messageContainer.scrollTo(0, messageContainer.scrollHeight);
+                // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
+                var scrollAmount = messageGroup.offsetTop - window.innerHeight / 2 + messageGroup.offsetHeight / 2;
+                messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
             }, (index + 1) * 1000); // Timeout entsprechend der Animation
         });
     });
