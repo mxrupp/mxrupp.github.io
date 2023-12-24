@@ -19,14 +19,15 @@
             padding: 10px;
             text-align: center;
             max-width: 100%; /* Volle Breite, aber begrenzt auf die maximale Breite des Inhalts */
-            margin: 0 auto; /* Zentriert auf breiteren Bildschirmen */
+            margin: 0; /* Am linken Bildschirmrand beginnen */
             border-radius: 10px;
         }
 
         #message-container {
             max-width: 85%; /* 85% der Bildschirmbreite */
-            margin: 20px auto 0; /* Platz über dem Nachrichten-Container */
+            margin: 20px 0 0; /* Platz über dem Nachrichten-Container */
             overflow: hidden;
+            margin-left: 0; /* Am linken Bildschirmrand beginnen */
         }
 
         .message-group {
@@ -58,7 +59,7 @@
             box-sizing: border-box;
             position: fixed;
             bottom: 0;
-            left: 0; /* Links ausrichten */
+            left: 0; /* Am linken Bildschirmrand beginnen */
             right: 0; /* Rechts ausrichten */
             width: 100%; /* Volle Breite */
             display: flex;
@@ -113,12 +114,12 @@
     <!-- 10 Nachrichten hinzugefügt -->
     <div class="message-group">
         <div class="message received" style="animation-delay: 1s;">
-            <div class="message received">aöldfjö asldkjfaö lsdjfaölskdjföa lskdjfaölkjfaö ldkjf ölkja flksdjlak</div>
+            <div class="message received">Nachricht 1</div>
         </div>
     </div>
     <div class="message-group">
         <div class="message received" style="animation-delay: 2s;">
-            <div class="message received">alkdjfö lajföal jdfölak jfölakj fölakdj fölakjd fölakdsj fölkj</div>
+            <div class="message received">Nachricht 2</div>
         </div>
     </div>
     <div class="message-group">
