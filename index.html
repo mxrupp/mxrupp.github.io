@@ -112,52 +112,52 @@
 
 <div id="message-container">
     <!-- 10 Nachrichten hinzugefügt -->
-    <div class="message-group">
+    <div class="message-group message1">
         <div class="message received" style="animation-delay: 1s;">
             <div class="message received">Nachricht 1</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message2">
         <div class="message received" style="animation-delay: 2s;">
             <div class="message received">Nachricht 2</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message3">
         <div class="message received" style="animation-delay: 3s;">
             <div class="message received">Nachricht 3</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message4">
         <div class="message received" style="animation-delay: 4s;">
             <div class="message received">Nachricht 4</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message5">
         <div class="message received" style="animation-delay: 5s;">
             <div class="message received">Nachricht 5</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message6">
         <div class="message received" style="animation-delay: 6s;">
             <div class="message received">Nachricht 6</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message7">
         <div class="message received" style="animation-delay: 7s;">
             <div class="message received">Nachricht 7</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message8">
         <div class="message received" style="animation-delay: 8s;">
             <div class="message received">Nachricht 8</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message9">
         <div class="message received" style="animation-delay: 9s;">
             <div class="message received">Nachricht 9</div>
         </div>
     </div>
-    <div class="message-group">
+    <div class="message-group message10">
         <div class="message received" style="animation-delay: 10s;">
             <div class="message received">Nachricht 10</div>
         </div>
@@ -171,7 +171,24 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // JavaScript-Code wurde entfernt
+        var messageContainer = document.getElementById('message-container');
+        var messageGroups = document.querySelectorAll('.message-group');
+
+        messageGroups.forEach(function (messageGroup, index) {
+            messageGroup.style.animationDelay = (index + 1) + 's';
+
+            setTimeout(function () {
+                messageGroup.classList.add('fade-in');
+            }, (index + 1) * 1000); // Timeout entsprechend der Animation
+        });
+
+        var lastMessageGroup = messageGroups[messageGroups.length - 1];
+
+        lastMessageGroup.addEventListener('animationend', function () {
+            // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
+            var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
+            messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
+        });
     });
 </script>
 
