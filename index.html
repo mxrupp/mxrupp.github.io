@@ -3,66 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iMessage-ähnliche Seite</title>
+    <title>iMessage-ähnliche Nachrichten</title>
     <style>
         body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-            font-family: 'Helvetica Neue', sans-serif;
+            overflow-y: scroll; /* Damit die Seite scrollt */
         }
 
-        #header {
-            position: relative;
-            background-color: rgba(200, 200, 200, 0.7); /* Grauer Balken mit 70% Deckkraft */
-            padding: 15px; /* etwas dickerer Balken */
-            width: 100%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 15px; /* abgerundete Ecken */
-        }
-
-        #header-text {
-            color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        #footer {
-            background-color: rgba(200, 200, 200, 0.7); /* Grauer Balken mit 70% Deckkraft */
+        #chat-header {
+            background-color: rgba(85, 85, 85, 0.7);
             padding: 10px;
-            width: 100vw; /* Vollständige Bildschirmbreite */
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
-            border-radius: 15px; /* abgerundete Ecken */
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
         }
 
-        #footer-text {
-            color: white;
+        #message-container {
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
         }
 
-        #content {
-            padding: 20px;
-            color: white;
+        #input-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: #000;
+        }
+
+        #input-message {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        #send-button {
+            background-color: #007AFF;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-<div id="header">
-    <div id="header-text">Max</div>
+<div id="chat-header">
+    Max ❤️
 </div>
 
-<div id="content">
-    <!-- Hier könnte der Chat-Inhalt platziert werden -->
-    <!-- Beispiel: <p>Chat-Inhalt hier...</p> -->
+<div id="message-container">
+    <!-- Nachrichten-Container wurde entfernt -->
 </div>
 
-<div id="footer">
-    <div id="footer-text">iMessage</div>
+<div id="input-container">
+    <input type="text" id="input-message" placeholder="iMessage by MaxMaus 🥰">
+    <button id="send-button">&#9650;</button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // JavaScript-Code wurde entfernt
+    });
+</script>
 
 </body>
 </html>
