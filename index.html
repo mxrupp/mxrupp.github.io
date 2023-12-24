@@ -170,22 +170,5 @@
     <button id="send-button">&#9650;</button>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var messageContainer = document.getElementById('message-container');
-        var inputContainer = document.getElementById('input-container');
-        var messageGroups = document.querySelectorAll('.message-group');
-
-        messageGroups.forEach(function (messageGroup, index) {
-            messageGroup.style.animationDelay = (index + 1) + 's';
-            messageGroup.classList.add('fade-in');
-
-            // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-            var scrollAmount = inputContainer.offsetTop - window.innerHeight + inputContainer.offsetHeight;
-            messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
-        });
-    });
-</script>
-
 </body>
 </html>
