@@ -11,6 +11,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            overflow-y: scroll; /* Damit die Seite scrollt */
         }
 
         #chat-header {
@@ -39,7 +40,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-top: 5px;
-            max-width: calc(100% - 20px); /* genauso breit wie die graue Leiste */
+            max-width: calc(100% - 20px);
             overflow-wrap: break-word;
         }
 
@@ -224,6 +225,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var flowerContainer = document.querySelector('.flower-container');
+        var messageContainer = document.getElementById('message-container');
         var messageGroups = document.querySelectorAll('.message-group');
 
         if (messageGroups.length > 0) {
@@ -235,6 +237,9 @@
 
             lastMessageGroup.addEventListener('animationend', function () {
                 flowerContainer.style.opacity = 1;
+                // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
+                var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
+                messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
             });
         }
     });
