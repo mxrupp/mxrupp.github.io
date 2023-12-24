@@ -11,7 +11,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-y: scroll; /* Damit die Seite scrollt */
+            overflow-y: auto; /* Damit die Seite scrollt */
         }
 
         #chat-header {
@@ -163,7 +163,6 @@
             <div class="message received">Aber sieh selbst... : </div>
         </div>
     </div>
-    
 </div>
 
 <div id="input-container">
@@ -182,7 +181,7 @@
             messageGroup.classList.add('fade-in');
 
             // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-            var scrollAmount = inputContainer.offsetTop - window.innerHeight / 2 + inputContainer.offsetHeight / 2;
+            var scrollAmount = inputContainer.offsetTop - window.innerHeight + inputContainer.offsetHeight;
             messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
         });
     });
