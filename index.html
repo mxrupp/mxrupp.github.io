@@ -179,15 +179,8 @@
 
             setTimeout(function () {
                 messageGroup.classList.add('fade-in');
+                messageContainer.scrollTo(0, messageContainer.scrollHeight);
             }, (index + 1) * 1000); // Timeout entsprechend der Animation
-        });
-
-        var lastMessageGroup = messageGroups[messageGroups.length - 1];
-
-        lastMessageGroup.addEventListener('animationend', function () {
-            // Scrollen, um die aktuell animierte Nachricht in der Mitte zu platzieren
-            var scrollAmount = lastMessageGroup.offsetTop - window.innerHeight / 2 + lastMessageGroup.offsetHeight / 2;
-            messageContainer.scrollTo({ top: scrollAmount, behavior: 'smooth' });
         });
     });
 </script>
