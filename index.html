@@ -13,10 +13,20 @@
         }
 
         #header {
-            background-color: #d8d8d8; /* Grauer Balken */
+            position: relative;
+            background-color: rgba(200, 200, 200, 0.7); /* Grauer Balken mit 70% Deckkraft */
             padding: 10px;
             width: 100%;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #header-text {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #content {
@@ -28,8 +38,7 @@
 <body>
 
 <div id="header">
-    <!-- Hier könnte der Header-Inhalt platziert werden -->
-    <!-- Beispiel: <h1>iMessage-ähnliche Seite</h1> -->
+    <div id="header-text">Max</div>
 </div>
 
 <div id="content">
