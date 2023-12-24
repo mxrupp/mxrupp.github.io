@@ -24,13 +24,13 @@
         }
 
         #message-container {
-            max-width: 100%; /* Volle Breite */
-            margin: 20px 0 0; /* Platz über dem Nachrichten-Container */
+            max-width: 85%; /* 85% der Bildschirmbreite */
+            margin: 20px auto 0; /* Platz über dem Nachrichten-Container */
             overflow: hidden;
         }
 
         .message-group {
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Kleiner Abstand zwischen den Nachrichten */
             clear: both;
             opacity: 0;
             animation: fade-in 1s forwards;
@@ -40,7 +40,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-top: 5px;
-            max-width: 85vw; /* 85% der Breite des Viewports (Bildschirms) */
+            max-width: 100%; /* Volle Breite */
             overflow-wrap: break-word;
         }
 
@@ -110,10 +110,55 @@
 </div>
 
 <div id="message-container">
+    <!-- 10 Nachrichten hinzugefügt -->
     <div class="message-group">
-        <!-- Neue Nachricht hinzugefügt -->
         <div class="message received" style="animation-delay: 1s;">
-            <div class="message received">Dies ist eine iMessage-ähnliche Nachricht, die 85% der Breite nutzt.</div>
+            <div class="message received">Nachricht 1</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 2s;">
+            <div class="message received">Nachricht 2</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 3s;">
+            <div class="message received">Nachricht 3</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 4s;">
+            <div class="message received">Nachricht 4</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 5s;">
+            <div class="message received">Nachricht 5</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 6s;">
+            <div class="message received">Nachricht 6</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 7s;">
+            <div class="message received">Nachricht 7</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 8s;">
+            <div class="message received">Nachricht 8</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 9s;">
+            <div class="message received">Nachricht 9</div>
+        </div>
+    </div>
+    <div class="message-group">
+        <div class="message received" style="animation-delay: 10s;">
+            <div class="message received">Nachricht 10</div>
         </div>
     </div>
 </div>
